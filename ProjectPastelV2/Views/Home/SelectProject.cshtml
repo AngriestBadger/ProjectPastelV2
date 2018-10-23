@@ -15,14 +15,89 @@
     </div>
 </div>
 
-<div class="rows">
+<div class="row">
     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
         @model IEnumerable<ProjectPastelV2.Models.SponsoredProject>
         @{
-            foreach (var item in Model)
-            {
-                <p>Make it stop.</p>
-            }
+            Preference groupPreference = new Preference(); 
         }
+
+        <div class="form-horizontal">
+            <hr />
+            <form asp-action="Index">
+                <!-- DATE FOR PREFERENCES SUBMISSION -->
+                <div class="form-group">
+                    <label asp-for="@groupPreference.PreferenceDate" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="@groupPreference.PreferenceDate" class="form-control" value="@DateTime.Now.ToString()" readonly />
+                        <span asp-validation-for="@groupPreference.PreferenceDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@groupPreference.GroupName" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="@groupPreference.GroupName" class="form-control" />
+                        <span asp-validation-for="@groupPreference.GroupName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@groupPreference.Preference1" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="@groupPreference.Preference1" class="form-control">
+                            <option value="" selected disabled">Select a Project</option>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <option value="@item.Title">@item.Title</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="@groupPreference.Preference1" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@groupPreference.Preference2" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="@groupPreference.Preference2" class="form-control">
+                            <option value="" selected disabled">Select a Project</option>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <option value="@item.Title">@item.Title</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="@groupPreference.Preference2" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@groupPreference.Preference3" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <select asp-for="@groupPreference.Preference3" class="form-control">
+                            <option value="" selected disabled">Select a Project</option>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <option value="@item.Title">@item.Title</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="@groupPreference.Preference3" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">Back to Home Page</a>
 </div>

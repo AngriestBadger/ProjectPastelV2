@@ -24,16 +24,21 @@
     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
         <thead>
             <tr>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.SponsorName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TeamSize)
-                </th>
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    <th>
+                        @Html.DisplayNameFor(model => model.SponsorName)
+                    </th>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    <th>
+                        @Html.DisplayNameFor(model => model.TeamSize)
+                    </th>
+                </div>
                 <!--
                 <th>
                     @Html.DisplayNameFor(model => model.ProjectDate)
@@ -63,51 +68,60 @@
                 <th></th>
             </tr>
         </thead>
+
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SponsorName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamSize)
-                </td>
-                <!--
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Contacts)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InScope)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OutOfScope)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SkillRequirements)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RelatedProjects)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Duration)
-                </td>
-                -->
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.SponsoredProjectId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.SponsoredProjectId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.SponsoredProjectId">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SponsorName)
+                        </td>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TeamSize)
+                        </td>
+                    </div>
+                    <!--
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contacts)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InScope)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OutOfScope)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SkillRequirements)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RelatedProjects)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    -->
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.SponsoredProjectId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.SponsoredProjectId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.SponsoredProjectId">Delete</a>
+                        </td>
+                    </div>
+                </tr>
             }
         </tbody>
     </div>

@@ -12,10 +12,14 @@ namespace ProjectPastelV2.Models
         public int SponsoredProjectId { get; set; }
         [Display(Name = "Project Date")]
         public string ProjectDate { get; set; }
+        [Required]
         [Display(Name = "Sponsor Name")]
         public string SponsorName { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string Contacts { get; set; }
         [Display(Name = "In Scope")]
         public string InScope { get; set; }
@@ -30,14 +34,25 @@ namespace ProjectPastelV2.Models
         public string Duration { get; set; }
 
         public bool IsAllocated { get; set; }
-        public List<Preference> GroupPreferences { get; set; }
+        //public List<Preference> GroupPreferences { get; set; }
     }
 
     public class Preference
     {
         public int PreferenceId { get; set; }
+        [Display(Name = "Preference Date")]
         public string PreferenceDate { get; set; }
+        [Required]
+        [Display(Name = "Group Name")]
         public string GroupName { get; set; }
-        public int PreferenceNo { get; set; }
+        [Required]
+        [Display(Name = "Option 1")]
+        public string Preference1 { get; set; }
+        [Required]
+        [Display(Name = "Option 2")]
+        public string Preference2 { get; set; }
+        [Required]
+        [Display(Name = "Option 3")]
+        public string Preference3 { get; set; }
     }
 }

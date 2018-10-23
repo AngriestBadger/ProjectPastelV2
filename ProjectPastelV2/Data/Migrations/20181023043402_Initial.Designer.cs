@@ -11,7 +11,7 @@ using System;
 namespace ProjectPastelV2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181023031254_Initial")]
+    [Migration("20181023043402_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -180,26 +180,6 @@ namespace ProjectPastelV2.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ProjectPastelV2.Models.Preference", b =>
-                {
-                    b.Property<int>("PreferenceId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("GroupName");
-
-                    b.Property<DateTime>("PreferenceDate");
-
-                    b.Property<int>("PreferenceNumber");
-
-                    b.Property<int?>("SponsoredProjectId");
-
-                    b.HasKey("PreferenceId");
-
-                    b.HasIndex("SponsoredProjectId");
-
-                    b.ToTable("Preference");
-                });
-
             modelBuilder.Entity("ProjectPastelV2.Models.SponsoredProject", b =>
                 {
                     b.Property<int>("SponsoredProjectId")
@@ -212,8 +192,6 @@ namespace ProjectPastelV2.Data.Migrations
                     b.Property<string>("Duration");
 
                     b.Property<string>("InScope");
-
-                    b.Property<bool>("IsAllocated");
 
                     b.Property<string>("OutOfScope");
 
@@ -277,13 +255,6 @@ namespace ProjectPastelV2.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ProjectPastelV2.Models.Preference", b =>
-                {
-                    b.HasOne("ProjectPastelV2.Models.SponsoredProject")
-                        .WithMany("GroupPreferences")
-                        .HasForeignKey("SponsoredProjectId");
                 });
 #pragma warning restore 612, 618
         }

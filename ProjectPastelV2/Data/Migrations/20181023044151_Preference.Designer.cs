@@ -11,9 +11,10 @@ using System;
 namespace ProjectPastelV2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181023044151_Preference")]
+    partial class Preference
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -179,26 +180,6 @@ namespace ProjectPastelV2.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ProjectPastelV2.Models.Preference", b =>
-                {
-                    b.Property<int>("PreferenceId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("GroupName");
-
-                    b.Property<string>("PreferenceDate");
-
-                    b.Property<int>("PreferenceNo");
-
-                    b.Property<int?>("SponsoredProjectId");
-
-                    b.HasKey("PreferenceId");
-
-                    b.HasIndex("SponsoredProjectId");
-
-                    b.ToTable("Preference");
-                });
-
             modelBuilder.Entity("ProjectPastelV2.Models.SponsoredProject", b =>
                 {
                     b.Property<int>("SponsoredProjectId")
@@ -211,8 +192,6 @@ namespace ProjectPastelV2.Data.Migrations
                     b.Property<string>("Duration");
 
                     b.Property<string>("InScope");
-
-                    b.Property<bool>("IsAllocated");
 
                     b.Property<string>("OutOfScope");
 
@@ -276,13 +255,6 @@ namespace ProjectPastelV2.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ProjectPastelV2.Models.Preference", b =>
-                {
-                    b.HasOne("ProjectPastelV2.Models.SponsoredProject")
-                        .WithMany("GroupPreferences")
-                        .HasForeignKey("SponsoredProjectId");
                 });
 #pragma warning restore 612, 618
         }

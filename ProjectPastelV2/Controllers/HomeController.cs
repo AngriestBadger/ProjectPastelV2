@@ -22,10 +22,12 @@ namespace ProjectPastelV2.Controllers
         {
             ViewData["Message"] = "Project Selection page.";
 
-            var allProjects = from sponsoredProject in _context.SponsoredProject
-                              orderby sponsoredProject.ProjectDate descending
-                              select sponsoredProject;
-            return View(allProjects.ToListAsync()); 
+            var allProjects = from project in _context.SponsoredProject
+                              orderby project.ProjectDate descending
+                              select project;
+            return View(await allProjects.ToListAsync()); 
+
+            //return View(await _context.SponsoredProject.ToListAsync()); 
         }
 
         public IActionResult Index()

@@ -29,17 +29,15 @@ namespace ProjectPastelV2.Models
         public string TeamSize { get; set; }
         public string Duration { get; set; }
 
-        // FOR PROJECT SELECTION
-        public bool IsAllocated { get; set; }                   // For easier allocation maybe, if Admin wants to manually allocate
-        public List<Preference> GroupPreferences { get; set; }  // List of groups and which preference this project is for that group
+        public bool IsAllocated { get; set; }
+        public List<Preference> GroupPreferences { get; set; }
     }
 
-    // PREFERENCE CLASS - each project has a list of these, for selection choice
     public class Preference
     {
         public int PreferenceId { get; set; }
+        public string PreferenceDate { get; set; }
         public string GroupName { get; set; }
-        public DateTime PreferenceDate { get; set; }
-        public int PreferenceNumber { get; set; }
+        public int PreferenceNo { get; set; }
     }
 }

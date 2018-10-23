@@ -11,9 +11,10 @@ using System;
 namespace ProjectPastelV2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181023044236_GroupPreferences")]
+    partial class GroupPreferences
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,8 +212,6 @@ namespace ProjectPastelV2.Data.Migrations
                     b.Property<string>("Duration");
 
                     b.Property<string>("InScope");
-
-                    b.Property<bool>("IsAllocated");
 
                     b.Property<string>("OutOfScope");
 

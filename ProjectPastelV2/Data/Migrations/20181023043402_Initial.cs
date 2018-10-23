@@ -8,21 +8,18 @@ namespace ProjectPastelV2.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "ProjectDate",
-                table: "SponsoredProject",
-                nullable: true,
-                oldClrType: typeof(DateTime));
+            migrationBuilder.DropColumn(
+                name: "IsAllocated",
+                table: "SponsoredProject");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<DateTime>(
-                name: "ProjectDate",
+            migrationBuilder.AddColumn<bool>(
+                name: "IsAllocated",
                 table: "SponsoredProject",
                 nullable: false,
-                oldClrType: typeof(string),
-                oldNullable: true);
+                defaultValue: false);
         }
     }
 }

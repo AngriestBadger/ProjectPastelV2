@@ -1,0 +1,128 @@
+﻿@model IEnumerable<ProjectPastelV2.Models.SponsoredProject>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="parallax_scrolling">
+    <div class="dark_background">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+                <div class="oxygen">
+                    <h1>Project Pastel</h1>
+                    <h2>All Projects</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.SponsorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamSize)
+
+                </th>
+
+                <!--
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contacts)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InScope)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OutOfScope)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SkillRequirements)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RelatedProjects)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAllocated)
+                </th>
+                    -->
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SponsorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamSize)
+
+                    </td>
+
+                    <!--
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contacts)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InScope)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OutOfScope)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SkillRequirements)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RelatedProjects)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsAllocated)
+                    </td>
+                    -->
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.SponsoredProjectId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.SponsoredProjectId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.SponsoredProjectId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </div>
+</table>

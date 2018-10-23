@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "SelectProject";
+}
+<div class="parallax_scrolling">
+    <div class="dark_background">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+                <div class="oxygen">
+                    <h1>Project Pastel</h1>
+                    <h2>Project Preferences</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@model IEnumerable<ProjectPastelV2.Models.SponsoredProject>
+@{ 
+    foreach (var item in Model)
+    {
+        <p>KMS.</p>
+    }
+}
+

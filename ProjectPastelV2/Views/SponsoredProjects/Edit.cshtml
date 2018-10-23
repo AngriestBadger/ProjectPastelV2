@@ -1,0 +1,91 @@
+﻿@model ProjectPastelV2.Models.SponsoredProject
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>SponsoredProject</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SponsoredProjectId" />
+            <div class="form-group">
+                <label asp-for="ProjectDate" class="control-label"></label>
+                <input asp-for="ProjectDate" class="form-control" />
+                <span asp-validation-for="ProjectDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SponsorName" class="control-label"></label>
+                <input asp-for="SponsorName" class="form-control" />
+                <span asp-validation-for="SponsorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacts" class="control-label"></label>
+                <input asp-for="Contacts" class="form-control" />
+                <span asp-validation-for="Contacts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InScope" class="control-label"></label>
+                <input asp-for="InScope" class="form-control" />
+                <span asp-validation-for="InScope" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OutOfScope" class="control-label"></label>
+                <input asp-for="OutOfScope" class="form-control" />
+                <span asp-validation-for="OutOfScope" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkillRequirements" class="control-label"></label>
+                <input asp-for="SkillRequirements" class="form-control" />
+                <span asp-validation-for="SkillRequirements" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RelatedProjects" class="control-label"></label>
+                <input asp-for="RelatedProjects" class="form-control" />
+                <span asp-validation-for="RelatedProjects" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamSize" class="control-label"></label>
+                <input asp-for="TeamSize" class="form-control" />
+                <span asp-validation-for="TeamSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsAllocated" /> @Html.DisplayNameFor(model => model.IsAllocated)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

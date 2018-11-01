@@ -24,5 +24,7 @@ namespace ProjectPastelV2.Data
         }
 
         public DbSet<ProjectPastelV2.Models.SponsoredProject> SponsoredProject { get; set; }
+
+        public DbSet<ProjectPastelV2.Models.Preference> Preference { get; set; }
     }
 }

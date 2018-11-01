@@ -1,0 +1,51 @@
+﻿@model ProjectPastelV2.Models.Preference
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Preference</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferenceDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PreferenceDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference3)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PreferenceId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

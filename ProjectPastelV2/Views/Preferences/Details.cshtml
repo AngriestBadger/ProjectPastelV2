@@ -1,0 +1,48 @@
+﻿@model ProjectPastelV2.Models.Preference
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Preference</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferenceDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PreferenceDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preference3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preference3)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PreferenceId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

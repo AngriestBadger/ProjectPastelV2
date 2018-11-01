@@ -12,6 +12,16 @@ namespace ProjectPastelV2.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult PreferencesList()
+        {
+            return View(); 
+        }
+
+        public IActionResult Confirmation()
+        {
+            return View();
+        }
+
         private readonly ApplicationDbContext _context;
         public HomeController(ApplicationDbContext context)
         {
@@ -28,6 +38,18 @@ namespace ProjectPastelV2.Controllers
             return View(await allProjects.ToListAsync()); 
 
             //return View(await _context.SponsoredProject.ToListAsync()); 
+        }
+
+        public async Task<IActionResult> Admin()
+        {
+            var allProjects = from project in _context.SponsoredProject
+                              orderby project.ProjectDate descending
+                              select project;
+            var allPreferences = from preference in _context.Preference
+                                 orderby preference.GroupName descending
+                                 select preference; 
+
+            return View(await allProjects.ToListAsync());
         }
 
         public IActionResult Index()
